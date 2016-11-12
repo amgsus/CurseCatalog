@@ -1,0 +1,197 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{14E4A4C9-4417-4FDD-8FF3-26BE3C1EB786}</ProjectGuid>
+			<ProjectVersion>12.2</ProjectVersion>
+			<MainSource>Y14S2CW.dpr</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform>Win32</Platform>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_UsePackage>vclx;vcl;rtl;vclimg;bdertl;TeeUI;Tee;TeeDB;vcldb;dbrtl;vcldbx;vclactnband;xmlrtl;vclib;ibxpress;adortl;vclie;inet;IndyProtocols;inetdbbde;inetdbxpress;vclribbon;DbxCommonDriver;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver</DCC_UsePackage>
+			<DCC_Description>Copyright © Amgsus HQ Grp., 2008-2014. All rights reserved.</DCC_Description>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_ExeOutput>.\Bin\</DCC_ExeOutput>
+			<DCC_DcuOutput>.\DCUs\</DCC_DcuOutput>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="Y14S2CW.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="Main.pas">
+				<Form>MainForm</Form>
+			</DCCReference>
+			<DCCReference Include="CCDBv2.pas"/>
+			<DCCReference Include="ItemEditor.Base.pas">
+				<Form>ItemEditorBaseFrame</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.Motherboards.pas">
+				<Form>ItemEditorFrame_MB</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.CPUs.pas">
+				<Form>ItemEditorFrame_CPU</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.RAM.pas">
+				<Form>ItemEditorFrame_RAM</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.HDDs.pas">
+				<Form>ItemEditorFrame_HDD</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.Coolant.pas">
+				<Form>ItemEditorFrame_COL</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.PowerSupply.pas">
+				<Form>ItemEditorFrame_PWR</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.Graphics.pas">
+				<Form>ItemEditorFrame_GPU</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.Audio.pas">
+				<Form>ItemEditorFrame_AUD</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.ODDs.pas">
+				<Form>ItemEditorFrame_ODD</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ItemEditor.SysUnits.pas">
+				<Form>ItemEditorFrame_UNT</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Splash.Welcome.pas">
+				<Form>SplashWelcomeForm</Form>
+			</DCCReference>
+			<DCCReference Include="Splash.About.pas">
+				<Form>SplashDialog</Form>
+			</DCCReference>
+			<DCCReference Include="Dialog.Message.pas">
+				<Form>MessageExDialog</Form>
+			</DCCReference>
+			<DCCReference Include="SearchDlg.Opts.pas">
+				<Form>SearchQueryDialog</Form>
+			</DCCReference>
+			<DCCReference Include="SearchDlg.Results.pas">
+				<Form>SearchResultsForm</Form>
+			</DCCReference>
+			<DCCReference Include="DataExports.pas">
+				<Form>DataExportDialog</Form>
+			</DCCReference>
+			<DCCReference Include="RecFilters.pas">
+				<Form>FilterDialog</Form>
+			</DCCReference>
+			<DCCReference Include="AuxProcs.pas"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">2</VersionInfo>
+						<VersionInfo Name="Build">8</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">True</VersionInfo>
+						<VersionInfo Name="Special">True</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">Amgsus HQ Grp.</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">CurseCatalog Alpha [Win32 Executable]</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.0.2.8</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">Copyright © Amgsus HQ Grp., 2008-2014. All rights reserved.</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks">This software is the property of Amgsus HQ Grp.. Included 3rd party libraries are the property of their respective owners.</VersionInfoKeys>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">CurseCatalog Alpha</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0 [InDev]</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+						<VersionInfoKeys Name="SpecialBuild">КУРСОВАЯ РАБОТА: 1-й курс, 2-й семестр, Гривачевский Андрей Максимович (гр. 351002)</VersionInfoKeys>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclact150.bpl">Embarcadero ActionBar Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclsmp150.bpl">Embarcadero Sample Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\svnide150.bpl">Embarcadero Subversion Integration</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcl31w150.bpl">Delphi 1.0 Compatibility Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcltouch150.bpl">Embarcadero Touch Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclmcn150.bpl">Embarcadero DataSnap Connection Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclIndyProtocols150.bpl">Indy 10 Protocols Design Time</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclwebsnap150.bpl">Embarcadero WebSnap Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclsoap150.bpl">Embarcadero SOAP Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapIndy10ServerTransport150.bpl">Embarcadero DBExpress DataSnap Server Transport Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapProviderClient150.bpl">Embarcadero DBExpress DataSnap Provider Client Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapClient150.bpl">Embarcadero DBExpress DataSnap Client Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapServer150.bpl">Embarcadero DBExpress DataSnap Server Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclWindowsAzureManagement150.bpl">Embarcadero Windows Azure management components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDeployCloud150.bpl">Embarcadero Deploy to the Cloud</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDBXDriversEnt150.bpl">Embarcadero Enterprise Driver Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcldbxcds150.bpl">Embarcadero SimpleDataset Component (DBX)</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k150.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp150.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<Source>
+						<Source Name="MainSource">Y14S2CW.dpr</Source>
+					</Source>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
